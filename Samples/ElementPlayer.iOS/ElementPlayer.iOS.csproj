@@ -154,14 +154,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross">
-      <Version>6.5.0-alpha.201</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Json">
-      <Version>6.5.0-alpha.201</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Visibility">
-      <Version>6.5.0-alpha.201</Version>
+    <PackageReference Include="Yemod">
+      <Version>0.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

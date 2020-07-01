@@ -105,8 +105,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross.Platforms.Wpf">
-      <Version>6.5.0-alpha.201</Version>
+    <PackageReference Include="Yemod">
+      <Version>0.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

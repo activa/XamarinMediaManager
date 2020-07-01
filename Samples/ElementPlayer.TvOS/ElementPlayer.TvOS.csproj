@@ -203,17 +203,6 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross">
-      <Version>6.5.0-alpha.201</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Json">
-      <Version>6.5.0-alpha.201</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Plugin.Visibility">
-      <Version>6.5.0-alpha.201</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\MediaManager\MediaManager.csproj">
       <Project>{aba3225c-7219-4472-ba3e-cfc3d9c06675}</Project>
       <Name>MediaManager</Name>
@@ -222,6 +211,11 @@
       <Project>{d4fba2b6-2057-412d-a391-0d1bf0e04e12}</Project>
       <Name>ElementPlayer.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Yemod">
+      <Version>0.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
 </Project>

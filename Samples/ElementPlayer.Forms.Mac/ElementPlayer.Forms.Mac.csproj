@@ -115,8 +115,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross.Forms">
-      <Version>6.5.0-alpha.201</Version>
+    <PackageReference Include="Yemod.Forms">
+      <Version>0.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
