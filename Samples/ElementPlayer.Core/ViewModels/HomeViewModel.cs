@@ -1,24 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
-using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 
 namespace ElementPlayer.Core.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
-        public HomeViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public HomeViewModel(IMediaManager mediaManager)
         {
             MediaManager = mediaManager;
         }
 
         public override string Title => "Home";
         public readonly IMediaManager MediaManager;
-        public MvxObservableCollection<IMediaItem> Items { get; set; } = new MvxObservableCollection<IMediaItem>();
+        public ObservableCollection<IMediaItem> Items { get; set; } = new ObservableCollection<IMediaItem>();
 
         public IMvxAsyncCommand<IMediaItem> ItemSelected => new MvxAsyncCommand<IMediaItem>(SelectItem);
         //new MvxAsyncCommand<IMediaItem>(async (item) => await this.NavigationService.Navigate<PlayerViewModel, IMediaItem>(item));

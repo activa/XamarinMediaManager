@@ -5,16 +5,13 @@ using MediaManager.Library;
 using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Player;
-using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
 using Xamarin.Forms;
 
 namespace ElementPlayer.Core.ViewModels
 {
     public class PlayerViewModel : BaseViewModel
     {
-        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public PlayerViewModel(IMediaManager mediaManager)
         {
             MediaManager = mediaManager;
             PlayPauseCommand = new MvxAsyncCommand(MediaManager.PlayPause);

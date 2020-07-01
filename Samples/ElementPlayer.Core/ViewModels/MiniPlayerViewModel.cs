@@ -4,9 +4,6 @@ using MediaManager.Library;
 using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Player;
-using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
 
 namespace ElementPlayer.Core.ViewModels
 {
@@ -14,7 +11,7 @@ namespace ElementPlayer.Core.ViewModels
     {
         public readonly IMediaManager MediaManager;
 
-        public MiniPlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public MiniPlayerViewModel(IMediaManager mediaManager)
         {
             MediaManager = mediaManager;
             PlayPauseCommand = new MvxAsyncCommand(MediaManager.PlayPause);

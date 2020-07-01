@@ -1,31 +1,28 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using ElementPlayer.Core.Assets;
 using MediaManager;
-using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 
 namespace ElementPlayer.Core.ViewModels
 {
     public class BrowseViewModel : BaseViewModel
     {
-        private readonly IMediaManager mediaManager;
+        private readonly IMediaManager _mediaManager;
 
-        public BrowseViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService, IMediaManager mediaManager) : base(logProvider, navigationService)
+        public BrowseViewModel(IMediaManager mediaManager)
         {
-            this.mediaManager = mediaManager;
+            this._mediaManager = mediaManager;
         }
 
         public override string Title => "Browse";
 
-        public MvxObservableCollection<string> Items { get; set; } = new MvxObservableCollection<string>(MediaPlaybackAssets.Mp3UrlList);
+        public ObservableCollection<string> Items { get; set; } = new ObservableCollection<string>(MediaPlaybackAssets.Mp3UrlList);
 
         public IMvxAsyncCommand<string> ItemSelected => new MvxAsyncCommand<string>(SelectItem);
 
         private async Task SelectItem(string url)
         {
-            await mediaManager.Play(url);
+            await _mediaManager.Play(url);
         }
     }
 }

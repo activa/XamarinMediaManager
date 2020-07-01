@@ -1,13 +1,10 @@
 ﻿using MediaManager;
-using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
 
 namespace ElementPlayer.Core.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
+        public MainViewModel()
         {
             CrossMediaManager.Current.StateChanged += Current_StateChanged;
         }
